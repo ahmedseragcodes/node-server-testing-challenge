@@ -1,7 +1,7 @@
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
-const hobbitsRouter = require("./hobbits/hobbitsRouter");
+const hobbitsRouter = require("./hobbitsRouter");
 const server = express();
 
 server.use(express.json());

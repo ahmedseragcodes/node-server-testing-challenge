@@ -1,7 +1,7 @@
 const db = require("../data/db-config");
 
 function getAllHobbits(){
-    return db("hobbits");
+    return db("hobbits")
 }
 
 function getHobbitById(id){

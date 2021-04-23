@@ -20,3 +20,15 @@ afterAll(async()=>{
 it("correct env", ()=>{
     expect(process.env.DB_ENV).toBe("testing");
 })
+
+describe("Hobbits Model", ()=>{
+    describe("post/insert function", ()=>{
+        it("adds a hobbit to the db", async()=>{
+            
+            let allHobbits
+            await db("hobbits").insert(gimley)
+            allHobbits = await db("hobbits")
+            expect(allHobbits).toHaveLength(1)
+        })
+    })
+})

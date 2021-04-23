@@ -31,4 +31,13 @@ describe("Hobbits Model", ()=>{
             expect(allHobbits).toHaveLength(1)
         })
     })
+    describe("delete function", ()=>{
+        it("deletes a hobbit from the db", async()=>{
+
+            let allHobbits;
+            await db("hobbits").del({id: 1})
+            allHobbits = await db("hobbits")
+            expect(allHobbits).toHaveLength(0);
+        })
+    })
 })

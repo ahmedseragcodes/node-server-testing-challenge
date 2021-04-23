@@ -29,6 +29,10 @@ describe("Hobbits Model", ()=>{
             await db("hobbits").insert(gimley)
             allHobbits = await db("hobbits")
             expect(allHobbits).toHaveLength(1)
+
+            await db("hobbits").insert(ent)
+            allHobbits = await db("hobbits")
+            expect(allHobbits).toHaveLength(2)
         })
     })
     describe("delete function", ()=>{

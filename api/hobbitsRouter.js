@@ -45,6 +45,7 @@ router.post("/", (req, res, next)=>{
         Hobbits.addNewHobbit(newHobbit)
         .then((newestHobbit)=>{
             console.log(newestHobbit);
+            res.status(200).json(newestHobbit);
         })
         .catch((err)=>{
             res.status(500).json({message: err.message});
@@ -56,6 +57,16 @@ router.post("/", (req, res, next)=>{
 //[DELETE] Hobbit
 router.delete("/:id", (req, res, next)=>{
 
+    const { id } = req.params;
+
+    Hobbits.deleteHobbit(id)
+    .then((result)=>{
+        console.log(result);
+        res.status(200).json(result);
+    })
+    .catch((err)=>{
+        res.status(500).json({message: err.message});
+    })
 
 })
 

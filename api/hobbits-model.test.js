@@ -35,4 +35,17 @@ describe("Hobbits", ()=>{
             expect(specificHobbit).toMatchObject([{id: 1, name: "Gandalf"}]);
         })
     })
+    describe("POST", ()=>{
+        it("inserts multiple hobbits and responds correctly", async()=>{
+
+            let hobbitsToAdd = [{name: "Gandalf"}, {name: "Legolas"}]
+
+            await db("hobbits").insert(hobbitsToAdd);
+
+            let allHobbits = await Hobbits.getAllHobbits()
+
+            expect(allHobbits).toMatchObject([{id: 1, name: "Gandalf"}, {id: 2, name: "Legolas"}])
+            expect(allHobbits).toHaveLength(2);
+        })
+    })
 })

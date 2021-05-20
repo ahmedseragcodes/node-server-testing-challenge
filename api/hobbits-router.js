@@ -1,5 +1,5 @@
 const express = require("express");
-const Hobbits = require("./hobbitsModel");
+const Hobbits = require("./hobbits-model");
 
 const router = express.Router();
 

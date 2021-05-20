@@ -1,7 +1,7 @@
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
-const hobbitsRouter = require("./hobbitsRouter");
+const hobbitsRouter = require("./hobbits-router");
 const server = express();
 
 server.use(express.json());
@@ -11,7 +11,7 @@ server.use("/api/hobbits", hobbitsRouter);
 
 //SANITY ENDPOINT 
 server.get("/", (req, res, next)=>{
-    res.status(200).json({message: "Success"});
+    res.status(200).json({message: "API Up"});
 })
 
 module.exports = server; 
